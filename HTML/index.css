@@ -1,0 +1,48 @@
+
+
+body {
+    background-image: url("https://mnogofaktov.ru/wp-content/uploads/2018/08/31-samyh-ozhidaemyh-filmov-v-2019-godu31.jpg");
+    background-repeat: no-repeat;
+    background-color: black;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    height: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    width: 90%;
+}
+
+h1 {
+    margin: 3rem auto 4rem 0;
+    font-size: 4rem;
+}
+
+.date {
+    font-size: 1rem;
+    margin: 15px 0;
+
+}
+
+.white-text {
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px black;
+}
+.text-container {
+    margin: 0 auto;
+    padding: 1rem 2rem; 
+    background-color: white;
+    opacity: 0.8;
+    box-shadow: 0 0 5px 2px black;
+
+}
+
+p{
+    color: black;
+    margin: 2rem;
+}
