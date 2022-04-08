@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { SiteContextProvider } from './context/SiteContext';
 import UserTile from './components/UserTile';
 import fetchUsers from './api/index';
 import './App.css';
@@ -25,21 +26,20 @@ function App() {
 
 
   return (
-    <div className="App">
+    <SiteContextProvider>
+      <div className="App">
       <header>
         <h1>Some random users</h1>
         <button className="toggleButton" onClick={toggleDarkMode}>{darkMode ? 'off' : 'on'}</button>
-
       </header>
       <main>
-      <UserList />
-
+        <UserList />
       </main>
       <footer>
-
       </footer>
-     
     </div>
+    </SiteContextProvider>
+    
   );
 }
 
