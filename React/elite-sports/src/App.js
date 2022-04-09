@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { SiteContextProvider } from './context/SiteContext';
+import React, {useState, useEffect, useContext} from 'react';
+import { SiteContext , SiteContextProvider } from './context/SiteContext';
 import UserTile from './components/UserTile';
 import fetchUsers from './api/index';
 import './App.css';
@@ -8,21 +8,19 @@ import UserList from './components/UserList';
 
 function App() {
 
-  const [currentUsers, setCurrentUsers] = useState([]);
+  // const context = useContext(SiteContext);
+
+
+  
   const [darkMode, setDarkMode] = useState(false);
 
-  const load = async () => {
-    const users = await fetchUsers();
-    setCurrentUsers(users);
-  }
+
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   }
 
-  useEffect(() => {
-    load();
-  }, []);
+
 
 
   return (

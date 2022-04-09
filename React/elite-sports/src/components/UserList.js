@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {useEffect, useContext, useState} from 'react'
+import fetchUsers from '../api';
 import styled from 'styled-components';
+import { SiteContext } from '../context/SiteContext';
 import UserTile from './UserTile';
 
 
@@ -22,6 +24,21 @@ const HeaderText = styled.p`
 `
 
 const UserList = () => {
+    const {currentUsers, setCurrentUsers} = useContext(SiteContext);
+    
+    
+
+    const load = async () => {
+        const users = await fetchUsers();
+        console.log('CURRENT USERS');
+        setCurrentUsers(users);
+        console.log(currentUsers);
+      }
+
+      useEffect(() => {
+        load();
+      }, []);
+
   return (
       <Container>
         <TableHeader>
@@ -31,10 +48,16 @@ const UserList = () => {
             <HeaderText>Country</HeaderText>
             <HeaderText>email</HeaderText>
         </TableHeader>
-        <UserTile />
-        <UserTile />
-        <UserTile />
-        <UserTile />
+        {
+            currentUsers.map(user => <UserTile 
+                                        key={user.id}
+                                        picture = {user.picture.thumbnail}
+                                        name = {user.name}
+                                        age = {user.dob.age}
+                                        country = {user.location.country}
+                                        email = {user.email}
+                                         />)
+        }
       </Container>
     
   )

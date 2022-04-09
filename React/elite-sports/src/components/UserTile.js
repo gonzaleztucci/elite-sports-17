@@ -22,15 +22,14 @@ const Pic = styled.img`
 `
 
 
-const UserTile = ({user}) => {
-
+const UserTile = (props) => {
   return (
       <Tile>
-        <Pic src='https://randomuser.me/api/portraits/thumb/men/4.jpg' />
-        <Text>Luis</Text>
-        <Text>37</Text>
-        <Text>Venezuela</Text>
-        <Text>gonzaleztucci@gmail.com</Text>
+        <Pic src={props.picture} />
+        <Text>{`${props.name.first} ${props.name.last}`}</Text>
+        <Text>{props.age}</Text>
+        <Text>{props.country}</Text>
+        <Text>{props.email}</Text>
       </Tile>
  
   )
