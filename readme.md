@@ -17,3 +17,6 @@ Go to the path /React/elite-sports and run the command below in order to install
 ```npm install``` 
 
 Once you have intalled the required dependencies you can run the React App by running `npm start`
+
+
+Please keep in mind that due to the nature of the [Randomuser.me API](https://randomuser.me/), the list is populated with random users every time the component is loaded and it is not possible to access a single user by `id`
