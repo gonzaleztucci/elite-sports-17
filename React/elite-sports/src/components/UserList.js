@@ -1,4 +1,5 @@
-import React, {useEffect, useContext, useState} from 'react'
+import React, {useEffect, useContext, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import fetchUsers from '../api';
 import styled from 'styled-components';
 import { SiteContext } from '../context/SiteContext';
@@ -23,8 +24,9 @@ const HeaderText = styled.p`
 `
 
 const UserList = () => {
-    const {currentUsers, setCurrentUsers} = useContext(SiteContext);
-    
+   
+    const {currentUsers, setCurrentUsers, selectedUser, setSelectedUser} = useContext(SiteContext);
+    let navigate = useNavigate();
     
 
     const load = async () => {
@@ -38,8 +40,9 @@ const UserList = () => {
         load();
       }, []);
 
-      const handleUserSelect = (id) => {
-          alert('click' + id);
+      const handleUserSelect = (user) => {
+          setSelectedUser(user);
+          navigate(`/users/${user.login.uuid}`);          
       }
 
   return (
@@ -81,7 +84,7 @@ const UserList = () => {
                     currentUsers.map(user => {
                         console.log(user);
                         return(
-                        <tr>
+                        <tr onClick = { () => handleUserSelect(user)} key={user.login.uuid}>
                             <td><img src={user.picture.thumbnail} alt='user profile'/></td>
                             <td>{`${user.name.first} ${user.name.last}`}</td>
                             <td>{user.dob.age}</td>
