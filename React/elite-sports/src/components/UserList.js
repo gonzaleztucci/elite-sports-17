@@ -13,14 +13,13 @@ const Container = styled.div`
 `
 const TableHeader = styled.div`
     display: grid;
-    grid-template-columns: 0.5fr 3fr 0.5fr 1fr 1fr;
+    grid-template-columns: 0.5fr 2fr 0.5fr 1fr 2fr;
     background-color: gray;
 `
 
 const HeaderText = styled.p`
     color: white;
     font-weight: bold;
-    border: 2px solid red;
 `
 
 const UserList = () => {
