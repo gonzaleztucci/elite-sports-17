@@ -3,7 +3,7 @@ import { SiteContext } from '../context/SiteContext';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    height: 100%;
+    /* height: 100%; */
     background-color: ${props => props.dark ? 'black' : 'white' };
     padding: 3rem;
 `

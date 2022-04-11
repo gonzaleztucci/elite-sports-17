@@ -1,4 +1,4 @@
-import React, {useEffect, useContext, useState} from 'react';
+import React, {useEffect, useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import fetchUsers from '../api';
 import styled from 'styled-components';
@@ -8,6 +8,7 @@ import { SiteContext } from '../context/SiteContext';
 const Container = styled.div`
     margin: 0;
     width: 100%;
+    height: 100%;
     border: 1px solid black;
     background-color: ${props => props.dark ? 'black' : 'white' } 
 `
