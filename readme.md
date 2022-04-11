@@ -8,7 +8,7 @@ Please clone it locally in order to be able to run the contents for each project
 
 ### HTML-CSS Test
 
-In order to open the file paste the path for the file in your browser.
+In order to open the file paste the path for `index.html` the file in your browser.
 
 ### React Test
 
