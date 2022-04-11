@@ -1,7 +1,7 @@
-.App{ 
+.App { 
   display: grid;
   grid-template-columns: 0.7fr 5fr;
-  grid-template-rows: 120px auto 50px;
+  grid-template-rows: auto auto 50px;
   grid-template-areas: 
     "header    header"
     "main    main"
@@ -11,15 +11,16 @@
 
 header {
   grid-area: header;
-  background-color: red;
+  margin: 0;
+  padding:0;
 }
 
 main {
   grid-area: main;
-  background-color: aliceblue;
 }
 
 footer {
   grid-area: footer;
-  background-color: yellow;
+  background-color: grey;
+  text-align: center;
 }
